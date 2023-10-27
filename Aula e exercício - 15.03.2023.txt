@@ -1,0 +1,95 @@
+/* OPERADORES LÓGICOS 
+
+OR -> PARA QUE A SAIDA DA QUERY SEJA VERDADEIRA, BASTA QUE APENAS UMA CONDICAO SEJA VERDADEIRA.
+AND -> PARA QUE A SAIDA SEJA VERDADEIRA TODAS AS CONDICOES PRECISAM SER VERDADEIRAS.
+
+
+
+/* OR - OU */
+
+SHOW DATABASES;
+
+USE PROJETO;
+
+SELECT * FROM CLIENTE;
+
+SELECT NOME, SEXO, ENDERECO FROM CLIENTE
+WHERE 
+SEXO = 'M' OR ENDERECO LIKE '%RJ';
+
+SELECT NOME, SEXO, ENDERECO FROM CLIENTE
+WHERE 
+SEXO = 'M' AND ENDERECO LIKE '%RJ';
+
+SELECT NOME, SEXO, ENDERECO  FROM CLIENTE
+WHERE
+SEXO = 'F' OR ENDERECO LIKE '%ESTACIO';
+
+/* AND - E */
+
+SELECT NOME, SEXO, ENDERECO  FROM CLIENTE
+WHERE 
+SEXO = 'M' AND ENDERECO LIKE '%RJ';
+
+SELECT NOME, SEXO, ENDERECO FROM CLIENTE
+WHERE
+SEXO = 'F' AND ENDERECO LIKE '%ESTACIO';
+
+________________________________________
+
+Atividades
+
+Com base no BD abaixo, realize os seguintes procedimentos:
+
+1 – Trazer todos os dados.
+
+2 – Trazer o nome do livro e o nome da editora.
+
+3 – Trazer o nome do livro e a UF dos livros publicados por autores do sexo masculino.
+
+4 - Trazer o nome do livro e o número de páginas dos livros publicados por autores do sexo feminino.
+
+5 – Trazer os valores dos livros das editoras de São Paulo.
+
+6 – Trazer os dados dos autores do sexo masculino que tiveram livros publicados por São Paulo ou Rio de Janeiro.*/
+
+
+
+
+CREATE DATABASE LIVRARIA;
+
+USE LIVRARIA;
+
+CREATE TABLE LIVROS(
+	LIVRO VARCHAR(100),
+	AUTOR VARCHAR(100),
+	SEXO CHAR(1),
+	PAGINAS INT(5),
+	EDITORA VARCHAR(30),
+	VALOR FLOAT(10,2),
+	UF CHAR(2),
+	ANO INT(4)
+);
+
+/* VERIFICANDO OS BANCOS */
+SHOW DATABASES;
+
+/* CONEVCTANDO A UM BANCO */
+USE LIVRARIA;
+
+
+INSERT INTO LIVROS VALUES('Cavaleiro Real','Ana Claudia','F',465,'Atlas',49.9,'RJ',2009);
+INSERT INTO LIVROS VALUES('SQL para leigos','João Nunes','M',450,'Addison',98,'SP',2018);
+INSERT INTO LIVROS VALUES('Receitas Caseiras','Celia Tavares','F',210,'Atlas',45,'RJ',2008);
+INSERT INTO LIVROS VALUES('Pessoas Efetivas','Eduardo Santos','M',390,'Beta',78,'RJ',2018);
+INSERT INTO LIVROS VALUES('Habitos Saudáveis','Eduardo Santos','M',630,'Beta',150,'RJ',2019);
+INSERT INTO LIVROS VALUES('A Casa Marrom','Hermes Macedo','M',250,'Bubba',60,'MG',2016);
+INSERT INTO LIVROS VALUES('Estacio Querido','Geraldo Francisco','M',310,'Insignia',100,'ES',2015);
+INSERT INTO LIVROS VALUES('Pra sempre amigas','Leda Silva','F',510,'Insignia',78,'ES',2011);
+INSERT INTO LIVROS VALUES('Copas Inesqueciveis','Marco Alcantara','M',200,'Larson',130,'RS',2018);
+INSERT INTO LIVROS VALUES('O poder da mente','Clara Mafra','F',120,'Continental',56,'SP',2017);
+
+
+
+
+						  
